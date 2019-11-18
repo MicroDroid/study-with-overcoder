@@ -270,8 +270,6 @@
 
 	<script>
 		window.onload = () => {
-			const page = getUrlParam('page') || 'index';
-
 			Vue.use(VueMarkdown);
 
 			const app = new Vue({
@@ -285,18 +283,13 @@
 					if (localStorage.getItem('isDark') === 'true')
 						document.body.classList.add('dark');
 
-					axios.get(`markdown/${page}.md`)
-						.then(response => {
-							this.content = response.data;
-						}).catch(error => {
-							console.log('ay');
-							if (error.response && error.response.status === 404)
-								this.content = 'الصفحة غير موجودة';
-							else
-								this.content = 'حدث خطأ';
+					this.loadPage();
 
-							console.error(error);
-						});
+					window.addEventListener('popstate', this.loadPage);
+				},
+
+				destroyed() {
+					window.removeEventListener('popstate', this.loadPage);
 				},
 
 				methods: {
@@ -312,6 +305,23 @@
 					print() {
 						window.print();
 					},
+
+					loadPage() {
+						const page = getHashParameter('page') || 'index';
+
+						axios.get(`markdown/${page}.md`)
+							.then(response => {
+								this.content = response.data;
+							}).catch(error => {
+								console.log('ay');
+								if (error.response && error.response.status === 404)
+									this.content = 'الصفحة غير موجودة';
+								else
+									this.content = 'حدث خطأ';
+
+								console.error(error);
+							});
+					},
 				},
 			})
 
@@ -319,17 +329,14 @@
 				navigator.serviceWorker.register('/sw.js');
 		};
 
+		// Modified version of:
 		// https://codebottle.io/s/4e85668754
-		function getUrlParam(param) {
-			if (window.location.href.endsWith("#"))
-				window.location.href = window.location.href.substr(0, window.location.href.length - 1);
-
+		function getHashParameter(param) {
 			const vars = {};
 
-			window.location.href
-				.replace(location.hash, '')
+			window.location.hash
 				.replace(
-					/[?&]+([^=&]+)=?([^&]*)?/gi,
+					/[#&]+([^=&]+)=?([^&]*)?/gi,
 					(m, key, value) => vars[key] = value !== undefined ? value : '',
 				);
 

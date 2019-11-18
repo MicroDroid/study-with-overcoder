@@ -5,6 +5,7 @@ const requiredURLs = [
 	'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css',
 	'https://fonts.googleapis.com/icon?family=Material+Icons',
 
+	'https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
 	'https://cdn.jsdelivr.net/npm/vue/dist/vue.js',
 	'https://cdn.jsdelivr.net/npm/vue-markdown@2.2.4/dist/vue-markdown.js',
 	'https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js',

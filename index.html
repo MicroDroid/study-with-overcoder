@@ -280,7 +280,7 @@
 				},
 
 				mounted() {
-					if (localStorage.getItem('isDark') === 'true')
+					if (localStorage.getItem('isDark') !== 'false')
 						document.body.classList.add('dark');
 
 					this.loadPage();

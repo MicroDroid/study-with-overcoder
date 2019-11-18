@@ -86,16 +86,27 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+	if (!event.request.url.startsWith('http')
+		|| event.request.url.startsWith('https://www.googletagmanager.com')
+		|| event.request.url.startsWith('https://www.google-analytics.com'))
+		return false;
+
 	if (/fonts.(googleapis|gstatic).com/.test(event.request.url))
 		caches.open(cacheKey).then(cache => cache.add(event.request.url))
 
 	event.respondWith(
 		caches.match(event.request).then(cached => {
-			return fetch(event.request).then(response => {
-				console.log(`Fetching thru network: ${event.request.url}`);
+			console.log(`Fetching thru network: ${event.request.url}`);
 
-				if (!response || !response.ok)
+			return fetch(event.request, {
+				mode: 'cors',
+				credentials: 'same-origin'
+			}).then(response => {
+				if (!response || !response.ok) {
+					console.warn(`Fetch failed, serving from cache: ${event.request.url}`);
 					return cached;
+				}
+
 
 				// Chrome Developers docs:
 				// IMPORTANT: Clone the response. A response is a stream

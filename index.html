@@ -283,6 +283,9 @@
 
 	<script>
 		window.onload = () => {
+			if ('serviceWorker' in navigator)
+				navigator.serviceWorker.register('/sw.js');
+
 			Vue.use(VueMarkdown);
 
 			const app = new Vue({
@@ -348,9 +351,6 @@
 					},
 				},
 			});
-
-			if ('serviceWorker' in navigator)
-				navigator.serviceWorker.register('/sw.js');
 		};
 
 		// Modified version of:

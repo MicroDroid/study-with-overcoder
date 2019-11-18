@@ -276,12 +276,13 @@
 				el: '#app',
 
 				data: {
+					sharingSupported: navigator.share,
 					content: '',
 				},
 
 				mounted() {
-					if (localStorage.getItem('isDark') !== 'false')
-						document.body.classList.add('dark');
+					if (localStorage.getItem('isDark') === 'false')
+						document.body.classList.remove('dark');
 
 					this.loadPage();
 
@@ -306,6 +307,15 @@
 						window.print();
 					},
 
+					share() {
+						if (sharingSupported)
+							navigator.share({
+								title: document.title,
+								text: "Hello World",
+								url: window.location.href,
+							});
+					},
+
 					loadPage() {
 						const page = getHashParameter('page') || 'index';
 
@@ -323,7 +333,7 @@
 							});
 					},
 				},
-			})
+			});
 
 			if ('serviceWorker' in navigator)
 				navigator.serviceWorker.register('/sw.js');
@@ -347,7 +357,7 @@
 		}
 	</script>
 </head>
-<body>
+<body class="dark">
 	<div id="app" v-cloak>
 		<nav class="navbar navbar-expand sticky-top">
 			<div class="container">
@@ -359,6 +369,11 @@
 					</li>
 				</ul>
 				<ul class="navbar-nav">
+					<li v-if="sharingSupported" class="nav-item">
+						<a class="nav-link" href="javascript:undefined" @click="share">
+							<span class="material-icons">share</span>
+						</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="javascript:undefined" @click="print">
 							<span class="material-icons">print</span>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="language" content="AR">
+	<meta name="keywords" content="aleppo, university, study, mechatronics, overcoder">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png">
+	<link rel="manifest" href="/meta/site.webmanifest">
+	<link rel="mask-icon" href="/meta/safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="/meta/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="Study with OverCoder">
+	<meta name="application-name" content="Study with OverCoder">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-config" content="/meta/browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+
+	<title>
+		Study with OverCoder
+	</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<style>
+		body {
+			font-family: 'Roboto', 'DIN Next LT W23', sans-serif;
+			direction: rtl;
+			text-align: right;
+
+			transition:
+				background 0.2s ease,
+				color 0.2s ease;
+		}
+
+		.navbar {
+			background: #efefef;
+			transition:
+				background 0.2s ease,
+				color 0.2s ease;
+		}
+
+		.navbar .nav-link {
+			color: #111111;
+		}
+
+		@page {
+			size: A4;
+			margin: 1.5cm;
+		}
+
+		@media not print {
+			body.dark {
+				background: #050505;
+				color: #efefef;
+			}
+
+			body.dark .navbar {
+				background: #050505;
+				border-bottom: 1px dotted grey;
+			}
+
+			body.dark .navbar .nav-link {
+				color: #efefef;
+			}
+
+			body.dark .content a,
+			body.dark .content a:active {
+				color: #efefef;
+			}
+		}
+
+		.content {
+			margin: 2rem 0px;
+		}
+
+		.katex {
+			direction: ltr;
+		}
+
+		#app[v-cloak] {
+			display: none;
+		}
+
+		@font-face {
+			font-family: 'DIN Next LT W23';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(fonts/DINNextLTW23-Regular.ttf) format('ttf');
+		}
+
+		@font-face {
+			font-family: 'DIN Next LT W23';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(fonts/DINNextLTW23-Bold.ttf) format('ttf');
+		}
+
+		/* uhh why is this not default, stupid */
+		.material-icons {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			vertical-align: middle;
+		}
+
+		.noscript-icon {
+			font-size: 144px;
+		}
+
+		/* Readability things */
+		/* Credit: https://github.com/Awjin/stylish-markdown/ */
+
+		.content h1,
+		.content h2,
+		.content h3 {
+			line-height: 1.4;
+		}
+
+		.content h1 {
+			font-size: 2.05rem;
+		}
+
+		.content h2 {
+			margin-top: 3.75rem;
+			font-size: 1.5rem;
+		}
+
+		.content h3 {
+			margin-top: 2.5rem;
+			font-size: 1.05rem;
+			font-weight: bold;
+		}
+
+		.content p,
+		.content ol,
+		.content ul {
+			margin-top: 1.25rem;
+		}
+
+		.content ol {
+			margin-left: 1.5rem;
+			list-style-position: inside;
+			list-style-type: decimal;
+		}
+
+		.content ul {
+			margin-left: 2.55rem;
+			list-style-position: outside;
+			list-style-type: circle;
+		}
+
+		.content ol ol,
+		.content ul ol {
+			margin-top: 0;
+			margin-left: 2rem;
+		}
+
+		.content ul ul,
+		.content ol ul {
+			margin-top: 0;
+			margin-left: 3.05rem;
+		}
+
+		.content li {
+			margin-top: .02rem;
+			padding-left: 0;
+		}
+
+		.content a,
+		.content a:active {
+			text-decoration: none;
+			color: #050505;
+			border-bottom: 1px dotted grey;
+		}
+
+		.content strong {
+			font-weight: bold;
+		}
+
+		.content em {
+			font-style: italic;
+		}
+
+		.content blockquote {
+			display: inline-block;
+			padding: 1rem 1.5rem 1.2rem 1.5rem;
+			margin: 0.5rem 0;
+			font-style: italic;
+			line-height: 1.5;
+		}
+
+		.content hr {
+			width: 100%;
+			height: 1px;
+			margin: 4rem 0;
+			border: none;
+		}
+
+		.content img {
+			display: inline-block;
+			width: 100%;
+			margin: 1.75rem 0 0.5rem 0;
+		}
+	</style>
+
+	<!-- i'm devving rn -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-markdown@2.2.4/dist/vue-markdown.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script>
+
+	<script>
+		window.onload = () => {
+			const page = getUrlParam('page') || 'index';
+
+			Vue.use(VueMarkdown);
+
+			const app = new Vue({
+				el: '#app',
+
+				data: {
+					content: '',
+				},
+
+				mounted() {
+					if (localStorage.getItem('isDark') === 'true')
+						document.body.classList.add('dark');
+
+					axios.get(`markdown/${page}.md`)
+						.then(response => {
+							this.content = response.data;
+						}).catch(error => {
+							console.log('ay');
+							if (error.response && error.response.status === 404)
+								this.content = 'الصفحة غير موجودة';
+							else
+								this.content = 'حدث خطأ';
+
+							console.error(error);
+						});
+				},
+
+				methods: {
+					toggleTheme() {
+						if (document.body.classList.contains('dark'))
+							document.body.classList.remove('dark');
+						else
+							document.body.classList.add('dark');
+
+						localStorage.setItem('isDark', document.body.classList.contains('dark'));
+					},
+
+					print() {
+						window.print();
+					},
+				},
+			})
+
+			if ('serviceWorker' in navigator)
+				navigator.serviceWorker.register('/sw.js');
+		};
+
+		// https://codebottle.io/s/4e85668754
+		function getUrlParam(param) {
+			if (window.location.href.endsWith("#"))
+				window.location.href = window.location.href.substr(0, window.location.href.length - 1);
+
+			const vars = {};
+
+			window.location.href
+				.replace(location.hash, '')
+				.replace(
+					/[?&]+([^=&]+)=?([^&]*)?/gi,
+					(m, key, value) => vars[key] = value !== undefined ? value : '',
+				);
+
+			if (param)
+					return vars[param] ? vars[param] : null;
+
+			return vars;
+		}
+	</script>
+</head>
+<body>
+	<div id="app" v-cloak>
+		<nav class="navbar navbar-expand sticky-top">
+			<div class="container">
+				<ul class="navbar-nav ml-auto pr-0">
+					<li class="nav-item">
+						<a class="nav-link" href=".">
+							<span class="material-icons">home</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="javascript:undefined" @click="print">
+							<span class="material-icons">print</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="javascript:undefined" @click="toggleTheme">
+							<span class="material-icons">brightness_medium</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://github.com/MicroDroid/study-with-overcoder/">
+							<span class="material-icons">code</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<vue-markdown :source="content" class="content"></vue-markdown>
+		</div>
+	</div>
+
+	<noscript>
+		<h1 class="mt-5 text-center">
+			<span class="material-icons noscript-icon">warning</span>
+			<br>
+			يجب تفعيل JavaScript لرؤية المحتوى.
+		</h1>
+	</noscript>
+</body>
+</html>

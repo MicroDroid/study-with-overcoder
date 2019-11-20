@@ -1,1 +1,3 @@
-- [aaa](#page=math/calculus/functions)
+## رياضيات
+
+- [التوابع](#page=math/calculus/functions)

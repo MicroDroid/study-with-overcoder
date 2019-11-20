@@ -219,16 +219,18 @@
 			width: auto;
 			min-width: 340px;
 			max-width: 100%;
+			border: 1px solid rgba(0, 0, 0, 0.2);
 		}
 
-		.content table th
+		.content table th,
 		.content table td {
-			border-top: none;
+			border-top: none !important;
 		}
 
 		.content a {
 			color: rgba(0, 0, 0, 0.85);
 			border-bottom: 1px dotted rgba(0, 0, 0, 0.85);
+			text-decoration: none;
 		}
 
 		.content .desmos-chart {
@@ -269,6 +271,10 @@
 			body.dark .content ul,
 			body.dark .content table {
 				color: rgba(255, 255, 255, 0.65);
+			}
+
+			body.dark .content table {
+				border: 1px solid rgba(255, 255, 255, 0.65);
 			}
 
 			body.dark .content table th,

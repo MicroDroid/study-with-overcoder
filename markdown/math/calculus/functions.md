@@ -35,7 +35,7 @@ $weight * 250 = price$
 
 $f(x) = x * 250$
 
-مثال عن أستخدام هذه الآلة:
+مثال عن استخدام هذه الآلة:
 
 - $f(1) = 1 * 250 = 250$
 - $f(65.5) = 65.5 * 250 = 16125$
@@ -64,7 +64,7 @@ $f(x) = x * 5$
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/umhlge5qhl?embed"></iframe>
 
-لو أخدنا نقاط أكثر:
+لو أخذنا نقاط أكثر:
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/uaxysg8uve?embed"></iframe>
 

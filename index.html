@@ -79,105 +79,37 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<style>
-		body {
-			font-family: 'Roboto', 'DIN Next LT W23', sans-serif;
-			direction: rtl;
-			text-align: right;
-
-			transition:
-				background 0.2s ease,
-				color 0.2s ease;
-		}
-
-		.navbar {
-			background: #efefef;
-			transition:
-				background 0.2s ease,
-				color 0.2s ease;
-		}
-
-		.navbar .nav-link {
-			color: #111111;
-		}
+		/* Global things */
 
 		@page {
 			size: A4;
 			margin: 1.5cm;
 		}
 
-		@media not print {
-			body.dark {
-				background: #121212;
-				color: rgba(255, 255, 255, 0.60);
-			}
-
-			body.dark .navbar {
-				background: #121212;
-				border-bottom: 1px dotted grey;
-			}
-
-			body.dark .content table thead,
-			body.dark .content a,
-			body.dark .content a:active,
-			body.dark .content table tbody {
-				color: rgba(255, 255, 255, 0.60);
-			}
-
-			body.dark .navbar .nav-link,
-			body.dark .content h1,
-			body.dark .content h2,
-			body.dark .content h3,
-			body.dark .content h4,
-			body.dark .content h5,
-			body.dark .content h6 {
-				color: rgba(255, 255, 255, 0.87);
-			}
-
-			body.dark .content table th,
-			body.dark .content table td {
-				border-color: rgba(255, 255, 255, 0.60);
-			}
-
-			body.dark .content blockquote {
-				border-right: 4px solid #2f2f2f;
-				color: rgba(255, 255, 255, 0.38);
-			}
-
-			body.dark .content .desmos-chart {
-				filter: invert(89%) saturate(1.75);
-			}
-
-			.content :not(image):not(iframe) {
-				max-width: 840px;
-			}
+		@font-face {
+			font-family: 'Noto Naskh Arabic UI';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(fonts/NotoNaskhArabicUI-Regular.ttf) format('ttf');
 		}
 
-		.content {
-			margin: 2rem 0px;
-		}
-
-		.katex {
-			direction: ltr;
+		@font-face {
+			font-family: 'Noto Naskh Arabic UI';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(fonts/NotoNaskhArabicUI-Bold.ttf) format('ttf');
 		}
 
 		#app[v-cloak] {
 			display: none;
 		}
 
-		@font-face {
-			font-family: 'DIN Next LT W23';
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(fonts/DINNextLTW23-Regular.ttf) format('ttf');
-		}
+		/* Patches */
 
-		@font-face {
-			font-family: 'DIN Next LT W23';
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(fonts/DINNextLTW23-Bold.ttf) format('ttf');
+		.katex {
+			direction: ltr;
 		}
 
 		/* uhh why is this not default, stupid */
@@ -188,109 +120,99 @@
 			vertical-align: middle;
 		}
 
+		/* Misc. */
+
 		.noscript-icon {
 			font-size: 144px;
 		}
 
-		/* Readability things */
-		/* Credit: https://github.com/Awjin/stylish-markdown/ */
+		/* Primary styles */
+
+		body {
+			font-family: 'Roboto', 'Noto Naskh Arabic UI', sans-serif;
+			direction: rtl;
+			text-align: right;
+
+			transition:
+				background 0.2s ease,
+				color 0.2s ease;
+
+			background: #ffffff;
+			color: rgba(0, 0, 0, 0.85);
+		}
+
+		.navbar {
+			background: #efefef;
+			transition:
+				background 0.2s ease,
+				color 0.2s ease;
+		}
+
+		.navbar .nav-link {
+			color: rgba(0, 0, 0, 0.85);
+		}
+
+		.content {
+			margin: 2rem 0px;
+			line-height: 1.4; /* default */
+		}
 
 		.content h1,
 		.content h2,
-		.content h3 {
-			line-height: 1.4;
-			font-weight: 400;
+		.content h3,
+		.content h4,
+		.content h5,
+		.content h6 {
+			margin-top: 1.2em;
+			margin-bottom: 0.5em;
 		}
 
 		.content h1 {
-			font-size: 2.05rem;
+			font-weight: 700;
+			font-size: 2.35em;
+			line-height: 1.23;
 		}
 
 		.content h2 {
-			margin-top: 3.75rem;
-			font-size: 1.5rem;
+			font-weight: 700;
+			font-size: 1.85em;
+			line-height: 1.35;
+
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+			padding-bottom: 0.2em;
 		}
 
 		.content h3 {
-			margin-top: 2.5rem;
-			font-size: 1.05rem;
-			font-weight: bold;
+			font-weight: 700;
+			font-size: 1.5em;
+			line-height: 1.35;
 		}
 
 		.content p,
 		.content ol,
 		.content ul {
-			margin-top: 1.25rem;
-		}
-
-		.content ol {
-			margin-left: 1.5rem;
-			list-style-position: inside;
-			list-style-type: decimal;
-		}
-
-		.content ul {
-			margin-left: 2.55rem;
-			list-style-position: outside;
-			list-style-type: circle;
-		}
-
-		.content ol ol,
-		.content ul ol {
-			margin-top: 0;
-			margin-left: 2rem;
-		}
-
-		.content ul ul,
-		.content ol ul {
-			margin-top: 0;
-			margin-left: 3.05rem;
-		}
-
-		.content li {
-			margin-top: .02rem;
-			padding-left: 0;
-		}
-
-		.content a,
-		.content a:active {
-			text-decoration: none;
-			color: #121212;
-			border-bottom: 1px dotted grey;
-		}
-
-		.content strong {
-			font-weight: bold;
-		}
-
-		.content em {
-			font-style: italic;
+			font-size: 1.15em;
+			margin-bottom: 1em;
+			color: rgba(0, 0, 0, 0.65);
+			max-width: 100%;
+			overflow-x: auto;
 		}
 
 		.content blockquote {
-			display: inline-block;
-			padding: 0.5rem 1.5rem;
-			margin: 0.5rem 0;
-			line-height: 1.5;
-			border-right: 4px solid #777777;
-			color: #111111;
+			background: rgba(0, 0, 0, 0.05);
+			padding: 0.75em 2em;
+			border-right: 4px solid rgba(0, 0, 0, 0.65);
+			border-radius: 2px;
+			max-width: 100%;
+			overflow-x: auto;
 		}
 
-		.content blockquote > p {
-			margin: 0;
-		}
-
-		.content hr {
-			width: 100%;
-			height: 1px;
-			margin: 4rem 0;
-			border: none;
+		.content blockquote p {
+			margin-bottom: 0;
 		}
 
 		.content img {
-			display: inline-block;
-			max-width: 100%;
-			margin: 1.75rem 0 0.5rem 0;
+			margin: 0em 0em 3em 0em;
 		}
 
 		.content table {
@@ -299,16 +221,61 @@
 			max-width: 100%;
 		}
 
-		.content table th {
-			border: 0;
-		}
-
 		.content .desmos-chart {
 			border: 0px;
 			width: 100%;
 			min-height: 480px;
 			filter: saturate(1.75);
 			pointer-events: none;
+			margin: 0.5em 0em 3em 0em;
+		}
+
+		.content .katex {
+
+		}
+
+		/* Dark theme 😎 */
+		@media not print {
+			body.dark {
+				background: #121212;
+				color: rgba(255, 255, 255, 0.85);
+			}
+
+			body.dark .navbar {
+				background: #121212;
+				border-bottom: 1px dotted grey;
+			}
+
+			body.dark .navbar .nav-link {
+				color: rgba(255, 255, 255, 0.85);
+			}
+
+			body.dark .content h2 {
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			}
+
+			body.dark .content p,
+			body.dark .content ol,
+			body.dark .content ul,
+			body.dark .content table {
+				color: rgba(255, 255, 255, 0.65);
+			}
+
+			body.dark .content table th,
+			body.dark .content table td {
+				border-color: rgba(255, 255, 255, 0.65);
+			}
+
+			body.dark .content blockquote {
+				background: rgba(255, 255, 255, 0.05);
+				padding: 0.75em 2em;
+				border-right: 4px solid rgba(255, 255, 255, 0.65);
+				border-radius: 2px;
+			}
+
+			body.dark .content .desmos-chart {
+				filter: invert(89%) saturate(1.75);
+			}
 		}
 	</style>
 

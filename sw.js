@@ -11,8 +11,8 @@ const requiredURLs = [
 	'https://cdn.jsdelivr.net/npm/vue-markdown@2.2.4/dist/vue-markdown.js',
 	'https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js',
 
-	'fonts/DINNextLTW23-Regular.ttf',
-	'fonts/DINNextLTW23-Bold.ttf',
+	'fonts/NotoNaskhArabicUI-Regular.ttf',
+	'fonts/NotoNaskhArabicUI-Bold.ttf',
 
 	'markdown/index.md',
 

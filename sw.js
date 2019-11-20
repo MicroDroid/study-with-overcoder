@@ -15,6 +15,9 @@ const requiredURLs = [
 	'fonts/DINNextLTW23-Bold.ttf',
 
 	'markdown/index.md',
+	
+	'markdown/math/calculus/functions.md',
+	'https://storage.overcoder.dev/f/fee8525ebb634aa38f72/?dl=1',
 
 	'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css',
 

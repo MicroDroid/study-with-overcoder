@@ -72,7 +72,7 @@ $f(x) = x * 5$
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/q2buj0ucpw?embed"></iframe>
 
-الخط الأخضر يمثل خط هذا التابع.
+الخط يمثل خط هذا التابع.
 
 > نلاحظ أن الخط البياني للتابع الخطي يكون عبارة عن مستقيم.
 

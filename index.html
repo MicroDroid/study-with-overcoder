@@ -61,7 +61,7 @@
 		}
 
 		.pace .pace-progress {
-			background: #dd2222;
+			background: #f44336;
 			position: fixed;
 			z-index: 2000;
 			top: 0;
@@ -110,6 +110,15 @@
 
 		.katex {
 			direction: ltr;
+			white-space: normal;
+		}
+
+		.katex .katex-html {
+			overflow-wrap: normal;
+		}
+
+		.katex .mord {
+			display: inline-block;
 		}
 
 		/* uhh why is this not default, stupid */
@@ -133,82 +142,67 @@
 			direction: rtl;
 			text-align: right;
 
-			transition:
-				background 0.2s ease,
-				color 0.2s ease;
+			/*direction: ltr !important;*/
+			/*text-align: left !important;*/
 
-			background: #ffffff;
-			color: rgba(0, 0, 0, 0.85);
+			background: #000000;
+			color: rgba(255, 255, 255, 0.8);
+
+			counter-reset: h1;
+
+			transition: all 0.2s ease;
 		}
 
 		.navbar {
-			background: #efefef;
-			transition:
-				background 0.2s ease,
-				color 0.2s ease;
+			background: #000000;
+			border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+
+			transition: all 0.2s ease;
 		}
 
 		.navbar .nav-link {
-			color: rgba(0, 0, 0, 0.85);
+			color: rgba(255, 255, 255, 0.8);
 		}
 
 		.content {
-			margin: 2rem 0px;
+			margin: 2em 0px;
 			line-height: 1.4; /* default */
 		}
 
-		.content h1,
-		.content h2,
-		.content h3,
-		.content h4,
-		.content h5,
-		.content h6 {
-			margin-top: 1.2em;
-			margin-bottom: 0.5em;
-		}
-
 		.content h1 {
-			font-weight: 700;
-			font-size: 2.35em;
-			line-height: 1.23;
+			font-size: calc(2em + 1vw);
+			font-weight: bold;
+			border-bottom: 4px solid #f44336;
 		}
 
 		.content h2 {
-			font-weight: 700;
-			font-size: 1.85em;
-			line-height: 1.35;
+			margin-top: 1.5em;
+			margin-bottom: 0.75em;
+			font-weight: bold;
+			counter-increment: h2;
+		}
 
-			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-			padding-bottom: 0.2em;
+		.content h2::before {
+			content: '0' counter(h2) '/';
+			color: #f44336;
+			margin-left: 1em;
 		}
 
 		.content h3 {
-			font-weight: 700;
-			font-size: 1.5em;
-			line-height: 1.35;
+			margin-top: 0.5em;
+			font-size: 1.25em;
+			font-weight: bold;
+			display: inline-block;
+			color: #52afa6;
+			border-bottom: 1px dashed #52afa6;
 		}
 
-		.content p,
-		.content ol,
-		.content ul {
-			font-size: 1.15em;
-			margin-bottom: 1em;
-			color: rgba(0, 0, 0, 0.65);
-			max-width: 100%;
-			overflow-x: auto;
-		}
-
-		.content blockquote {
-			background: rgba(0, 0, 0, 0.05);
-			padding: 0.75em 2em;
-			border-right: 4px solid rgba(0, 0, 0, 0.65);
-			border-radius: 2px;
-			max-width: 100%;
-			overflow-x: auto;
+		.content p {
+			margin-top: 0.35em;
 		}
 
 		.content blockquote p {
-			margin-bottom: 0;
+			margin: 0;
 		}
 
 		.content img {
@@ -217,19 +211,24 @@
 
 		.content table {
 			width: auto;
-			min-width: 340px;
+			min-width: 280px;
 			max-width: 100%;
-			border: 1px solid rgba(0, 0, 0, 0.2);
+			color: rgba(255, 255, 255, 0.8);
 		}
 
-		.content table th,
+		.content table th {
+			border: none;
+			background: #111111;
+		}
+
 		.content table td {
-			border-top: none !important;
+			border-top: none;
+			background: #050505;
 		}
 
 		.content a {
-			color: rgba(0, 0, 0, 0.85);
-			border-bottom: 1px dotted rgba(0, 0, 0, 0.85);
+			color: rgba(255, 255, 255, 0.8);
+			border-bottom: 1px dotted rgba(255, 255, 255, 0.8);
 			text-decoration: none;
 		}
 
@@ -237,66 +236,39 @@
 			border: 0px;
 			width: 100%;
 			min-height: 480px;
-			filter: saturate(1.75);
+			filter: invert(0.98) saturate(3);
 			pointer-events: none;
 			margin: 0.5em 0em 3em 0em;
 		}
 
-		.content .katex {
-
+		body.light {
+			background: white;
+			color: rgba(0, 0, 0, 0.9);
 		}
 
-		/* Dark theme 😎 */
-		@media not print {
-			body.dark {
-				background: #121212;
-				color: rgba(255, 255, 255, 0.85);
-			}
+		body.light .navbar {
+			background: #efefef;
+			border-bottom: none;
+		}
 
-			body.dark .navbar {
-				background: #121212;
-				border-bottom: 1px dotted grey;
-			}
+		body.light .navbar .nav-link {
+			color: black;
+		}
 
-			body.dark .navbar .nav-link {
-				color: rgba(255, 255, 255, 0.85);
-			}
+		body.light .content table {
+			color: black;
+		}
 
-			body.dark .content h2 {
-				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-			}
+		body.light .content table td {
+			background: rgba(0, 0, 0, 0.1);
+		}
 
-			body.dark .content p,
-			body.dark .content ol,
-			body.dark .content ul,
-			body.dark .content table {
-				color: rgba(255, 255, 255, 0.65);
-			}
+		body.light .content table th {
+			background: rgba(0, 0, 0, 0.15);
+		}
 
-			body.dark .content table {
-				border: 1px solid rgba(255, 255, 255, 0.65);
-			}
-
-			body.dark .content table th,
-			body.dark .content table td {
-				border-color: rgba(255, 255, 255, 0.65);
-			}
-
-			body.dark .content blockquote {
-				background: rgba(255, 255, 255, 0.05);
-				padding: 0.75em 2em;
-				border-right: 4px solid rgba(255, 255, 255, 0.65);
-				border-radius: 2px;
-			}
-
-			body.dark .content .desmos-chart {
-				filter: invert(89%) saturate(1.75);
-			}
-
-			body.dark .content a {
-				color: rgba(255, 255, 255, 0.85);
-				border-bottom: 1px dotted rgba(255, 255, 255, 0.85);
-			}
+		body.light .content .desmos-chart {
+			filter: unset;
 		}
 	</style>
 
@@ -335,8 +307,8 @@
 				},
 
 				mounted() {
-					if (localStorage.getItem('isDark') === 'false')
-						document.body.classList.remove('dark');
+					if (localStorage.getItem('isLight') === 'true')
+						document.body.classList.add('light');
 
 					this.loadPage();
 
@@ -349,16 +321,22 @@
 
 				methods: {
 					toggleTheme() {
-						if (document.body.classList.contains('dark'))
-							document.body.classList.remove('dark');
+						if (document.body.classList.contains('light'))
+							document.body.classList.remove('light');
 						else
-							document.body.classList.add('dark');
+							document.body.classList.add('light');
 
-						localStorage.setItem('isDark', document.body.classList.contains('dark'));
+						localStorage.setItem('isLight', document.body.classList.contains('light'));
 					},
 
 					print() {
-						window.print();
+
+						if (!document.body.classList.contains('light')) {
+							this.toggleTheme();
+							setTimeout(() => window.print(), 200);
+						} else {
+							window.print();
+						}
 					},
 
 					share() {
@@ -409,7 +387,7 @@
 		}
 	</script>
 </head>
-<body class="dark">
+<body>
 	<div id="app" v-cloak>
 		<nav class="navbar navbar-expand sticky-top">
 			<div class="container">

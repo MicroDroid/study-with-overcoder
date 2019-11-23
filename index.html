@@ -386,10 +386,12 @@
 					},
 
 					print() {
+						for (const detail of document.querySelectorAll('.content > details:not([open])'))
+							detail.setAttribute('open', 'open');
 
 						if (!document.body.classList.contains('light')) {
 							this.toggleTheme();
-							setTimeout(() => window.print(), 200);
+							setTimeout(() => window.print(), 300);
 						} else {
 							window.print();
 						}
@@ -485,7 +487,7 @@
 		</nav>
 
 		<div class="container">
-			<vue-markdown :source="content" class="content"></vue-markdown>
+			<vue-markdown :source="content" class="content" ref="content"></vue-markdown>
 		</div>
 	</div>
 

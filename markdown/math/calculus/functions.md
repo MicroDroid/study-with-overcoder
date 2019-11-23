@@ -60,7 +60,7 @@ $f(x) = x * 5$
 | 5kg   | 25    |
 | 15kg  | 75    |
 
-لنضع النقاط على الخط البياني:
+لنضع النقاط على المخطط البياني:
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/umhlge5qhl?embed"></iframe>
 
@@ -105,3 +105,37 @@ $f(x) = x^2$
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/nc0qletq9b?embed"></iframe>
 
 > نلاحظ أن الخط البياني للتابع **غير** الخطي **لا** يمثل خط مستقيم.
+
+## تمارين
+
+<details>
+<summary>ما الفرق بين العلاقات الرياضية والتوابع؟</summary>
+
+العلاقات الرياضية تربط عدة متغيرات مع بعضها, فمثلاً لو لدينا:
+
+$x = y^2$
+
+هذا يعني على سبيل المثال أنه لو تضاعفت قيمة $y$ سوف تصبح قيمة $x$ أربع أضعاف.
+في حين التوابع هي عبارة عن آلية لها دخل واحد أو أكثر و **خرج واحد فقط,** بغض النظر عن الطريقة التي ربطت فيها المقدارين.
+
+فمثلا بعض التوابع ليس بالضرورة أن يكون ناتجه عددي, هناك أيضا توابع تعمل بعدة علاقات رياضية. مثال على ذلك:
+
+$$f(x) = \begin{cases}
+   x/ln(x) &\text{if } x > 0 \\
+   x^2 &\text{if } x <= 0
+\end{cases}$$
+
+بشكل عملي يوجد تداخل بين المفهومين ولكن هناك اختلاف كبير يجعل التوابع منفصلة عن العلاقات الرياضية.
+</details>
+
+<details>
+<summary>هل يمكن أن يكون للتابع عدة نواتج لنفس الدخل؟</summary>
+لا.
+</details>
+
+
+<details>
+<summary>ارسم التابع f(x) = x*2</summary>
+
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/vdmv3flqtl?embed"></iframe>
+</details>

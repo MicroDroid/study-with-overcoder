@@ -15,7 +15,6 @@ const requiredURLs = [
 	'fonts/NotoNaskhArabicUI-Bold.ttf',
 
 	'markdown/index.md',
-
 	'markdown/math/calculus/functions.md',
 
 	'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css',

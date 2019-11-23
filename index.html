@@ -151,6 +151,7 @@
 			counter-reset: h1;
 
 			transition: all 0.2s ease;
+			font-size: calc(1rem + 0.1vw);
 		}
 
 		.navbar {
@@ -170,16 +171,24 @@
 		}
 
 		.content h1 {
-			font-size: calc(2em + 1vw);
+			font-size: 2em;
 			font-weight: bold;
-			border-bottom: 4px solid #f44336;
+			border-bottom: 3px solid #f44336;
+			padding-bottom: 0.25em;
+			counter-reset: h3;
+			display: inline-block;
 		}
 
 		.content h2 {
-			margin-top: 1.5em;
+			font-size: 1.5em;
+			margin-top: 3em;
 			margin-bottom: 0.75em;
 			font-weight: bold;
 			counter-increment: h2;
+		}
+
+		.content h1 + h2 {
+			margin-top: 1em;
 		}
 
 		.content h2::before {
@@ -189,12 +198,18 @@
 		}
 
 		.content h3 {
+			font-size: 1.15em;
 			margin-top: 0.5em;
-			font-size: 1.25em;
 			font-weight: bold;
 			display: inline-block;
 			color: #52afa6;
 			border-bottom: 1px dashed #52afa6;
+			counter-increment: h3;
+		}
+
+		.content h3::before {
+			content: counter(h3, lower-roman) '.';
+			margin-left: 0.75em;
 		}
 
 		.content p {
@@ -242,7 +257,7 @@
 			border: 0px;
 			width: 100%;
 			min-height: 480px;
-			filter: invert(0.98) saturate(3);
+			filter: invert(0.98) saturate(3) hue-rotate(180deg);
 			pointer-events: none;
 			margin: 0.5em 0em 3em 0em;
 		}
@@ -274,7 +289,13 @@
 		}
 
 		body.light .content .desmos-chart {
-			filter: unset;
+			filter: saturate(3);
+		}
+
+		body.light .content blockquote {
+			padding: 0.5em 1.5em;
+			border-right: 4px solid #aaa;
+			background: #efefef;
 		}
 	</style>
 

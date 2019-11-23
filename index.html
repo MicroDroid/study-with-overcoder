@@ -288,6 +288,12 @@
 			background: rgba(0, 0, 0, 0.15);
 		}
 
+		body.light .content a {
+			color: rgba(0, 0, 0, 0.9);
+			border-bottom: 1px dotted rgba(0, 0, 0, 0.9);
+			text-decoration: none;
+		}
+
 		body.light .content .desmos-chart {
 			filter: saturate(3);
 		}
@@ -426,6 +432,11 @@
 					</li>
 				</ul>
 				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="https://telegram.me/study_with_overcoder" target="_blank">
+							<span class="material-icons">rss_feed</span>
+						</a>
+					</li>
 					<li v-if="sharingSupported" class="nav-item">
 						<a class="nav-link" href="javascript:undefined" @click="share">
 							<span class="material-icons">share</span>

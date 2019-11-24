@@ -135,6 +135,10 @@
 			font-size: 144px;
 		}
 
+		.toc-anchor {
+			display: none;
+		}
+
 		/* Primary styles */
 
 		body {
@@ -176,6 +180,15 @@
 		.content {
 			margin: 2em 0px;
 			line-height: 1.4; /* default */
+		}
+
+		.content h1,
+		.content h2,
+		.content h3,
+		.content h4,
+		.content h5,
+		.content h6 {
+			cursor: pointer;
 		}
 
 		.content h1 {
@@ -360,19 +373,22 @@
 				data: {
 					sharingSupported: navigator.share,
 					content: '',
+
+					// Used to prevent duplicate navigations
+					loadedPage: null,
 				},
 
 				mounted() {
 					if (localStorage.getItem('isLight') === 'true')
 						document.body.classList.add('light');
 
-					this.loadPage();
+					this.onNavigation();
 
-					window.addEventListener('popstate', this.loadPage);
+					window.addEventListener('popstate', this.onNavigation);
 				},
 
 				destroyed() {
-					window.removeEventListener('popstate', this.loadPage);
+					window.removeEventListener('popstate', this.onNavigation);
 				},
 
 				methods: {
@@ -404,14 +420,30 @@
 							});
 					},
 
-					loadPage() {
+					onNavigation() {
 						const page = getHashParameter('page') || 'index';
+						const section = decodeURIComponent(getHashParameter('section'));
 
+						if (page === this.loadedPage) {
+							// Probably section hash changed.
+							this.scrollToSection(section);
+						} else {
+							// Meh, everything changed then.
+							this.loadedPage = page;
+
+							this.loadPage(page).then(() => {
+								this.scrollToSection(section);
+								this.attachHeadingsAnchors();
+							});
+						}
+					},
+
+					loadPage(page) {
 						gtag('config', GA_TRACKING_CODE, {
 							page_path: window.location.pathname + window.location.hash,
 						});
 
-						axios.get(`markdown/${page}.md`)
+						return axios.get(`markdown/${page}.md`)
 							.then(response => {
 								this.content = response.data;
 							}).catch(error => {
@@ -421,6 +453,37 @@
 									this.content = 'حدث خطأ';
 
 								console.error(error);
+							});
+					},
+
+					scrollToSection(section) {
+						const sectionTarget = document.getElementById(section);
+
+						if (sectionTarget)
+							window.scroll(0, sectionTarget.offsetTop - (60 + 26)); // 60px navbar; 26px margin
+					},
+
+					attachHeadingsAnchors() {
+						const selector = [
+							'.content > h1',
+							'.content > h2',
+							'.content > h3',
+							'.content > h4',
+							'.content > h5',
+							'.content > h6',
+						].join(', ');
+
+						for (const heading of document.querySelectorAll(selector))
+							heading.addEventListener('click', () => {
+								const section = heading.getAttribute('id');
+
+								const hash = buildParams({
+									...getHashParameter(),
+									section,
+								});
+
+								window.history.pushState({}, null, `#${hash}`);
+								this.scrollToSection(section);
 							});
 					},
 				},
@@ -442,6 +505,12 @@
 					return vars[param] ? vars[param] : null;
 
 			return vars;
+		}
+
+		function buildParams(params) {
+			return Object.keys(params)
+				.reduce((acc, name) => [...acc, `${name}=${params[name]}`], [])
+				.join('&');
 		}
 	</script>
 </head>
@@ -487,7 +556,7 @@
 		</nav>
 
 		<div class="container">
-			<vue-markdown :source="content" class="content" ref="content"></vue-markdown>
+			<vue-markdown :source="content" class="content" ref="content" toc></vue-markdown>
 		</div>
 	</div>
 

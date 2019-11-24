@@ -96,7 +96,7 @@ $f(x) = x^2$
 | 3     | 8     |
 | 5     | 25    |
 
-لنضع النقاط على خطح بياني:
+لنضع النقاط على خط بياني:
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/hnoonanbmx?embed"></iframe>
 

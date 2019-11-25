@@ -484,6 +484,9 @@
 
 								window.history.pushState({}, null, `#${hash}`);
 								this.scrollToSection(section);
+
+								if (navigator.clipboard)
+									navigator.clipboard.writeText(window.location.href);
 							});
 					},
 				},

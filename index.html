@@ -73,7 +73,7 @@
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -115,9 +115,6 @@
 
 		.katex .katex-html {
 			overflow-wrap: normal;
-		}
-
-		.katex .mord {
 			display: inline-block;
 		}
 
@@ -162,6 +159,10 @@
 
 		blockquote {
 			transition: border-color 0.3s ease;
+		}
+
+		blockquote > *:last-child {
+			margin-bottom: 0;
 		}
 
 		p, th, td, h1, h2, h3, h4, h6, li, .nav-link, details summary {
@@ -239,8 +240,8 @@
 
 		.content blockquote {
 			padding: 0.5em 1.5em;
-			border-right: 4px solid rgba(255, 255, 255, 0.3);
-			background: rgba(255, 255, 255, 0.1);
+			border-right: 4px solid rgba(255, 255, 255, 0.125);
+			background: rgba(255, 255, 255, 0.05);
 		}
 
 		.content blockquote p {
@@ -252,15 +253,21 @@
 		}
 
 		.content table {
+			display: block;
 			width: auto;
 			min-width: 280px;
 			max-width: 100%;
+			overflow-x: auto;
 			color: rgba(255, 255, 255, 0.8);
 		}
 
 		.content table th {
 			border: none;
 			background: rgba(255, 255, 255, 0.065);
+		}
+
+		.content table th:empty {
+			display: none;
 		}
 
 		.content table td {
@@ -277,10 +284,13 @@
 		.content .desmos-chart {
 			border: 0px;
 			width: 100%;
-			min-height: 480px;
 			filter: invert(0.98) saturate(1.5) hue-rotate(180deg);
 			pointer-events: none;
 			margin: 0.5em 0em 3em 0em;
+		}
+
+		.content .desmos-chart:not([height]) {
+			min-height: 480px;
 		}
 
 		details {
@@ -342,7 +352,7 @@
 	</style>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue-markdown@2.2.4/dist/vue-markdown.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/MicroDroid/vue-markdown@master/dist/vue-markdown.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script>
 
 	<!-- i track u 👀 -->

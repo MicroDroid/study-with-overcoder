@@ -96,20 +96,35 @@ $$f(x) = 1/{x+2}$$
 > لم يتم كتابة شرح لذلك هنا, لكن يكفي الآن رسم التوابع الشهيرة بناءً على أخذ بعض النقاط والتخمين لفهم الفكرة بشكل عام.
 > في حال كنت تريد تعلم رسم التوابع بالشكل الدقيق والصحيح يجب أن تقرأ من مصادر خراجية إلى حين يتم تغطية ذلك هنا.
 
+<!-- Exercise -->
+
 <details>
-<summary>ارسم التابع f(x) = 5x</summary>
+<summary>
+
+ارسم التابع $f(x) = 5x$
+</summary>
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/qbnyu3gm9l?embed"></iframe>
 </details>
 
+<!-- Exercise -->
+
 <details>
-<summary>ارسم التابع f(x) = -x</summary>
+<summary>
+
+ارسم التابع $f(x) = -x$
+</summary>
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/s40qwpn2kk?embed"></iframe>
 </details>
 
+<!-- Exercise -->
+
 <details>
-<summary>ارسم التابع f(x) = x^3</summary>
+<summary>
+
+ارسم التابع $f(x) = x^3$
+</summary>
 
 <iframe class="desmos-chart" src="https://www.desmos.com/calculator/fxrm9pg6mn?embed"></iframe>
 </details>

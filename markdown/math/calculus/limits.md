@@ -34,7 +34,7 @@ $$f(x) = \frac{1 - 1}{1 - 1} = \frac{0}{0}$$
 - نعلم أن $f(x)$ يقترب من $2$.
 - نعلم أن $f(x)$ لا يمكن أن يصل إلى $2$.
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/6akmpeg0k8?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/fo86ah6ux8?embed"></iframe>
 
 يمكن التعبير عن ذلك بشكل رياضي بالشكل التالي:
 
@@ -53,7 +53,7 @@ $$f(x) = \frac{1}{1+2^{-1/x}}$$
 
 هذا التابع خطه البياني يكون:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/a7qh1ml2rj?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/ybgxijeoqo?embed"></iframe>
 
 نلاحظ:
 
@@ -86,7 +86,7 @@ $$\lim_{x \to 0^+} = +\infty$$
 
 هذه النهاية بشكل عملي تعني: التابع يتزايد بشكل غير محدد كلما اقتربت قيمة $x$ من $0$ (من اليمين في هذه الحالة).
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/lgxtxupavn?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/rc1daabmwo?embed"></iframe>
 
 
 > ملاحظة: بعض التوابع مثل $f(x) = x$ يكون فيها $\lim_{x \to +\infty} f(x) = +\infty$.
@@ -100,7 +100,7 @@ $$\lim_{x \to \infty} f(x) = 5$$
 
 بمعنى آخر التابع يقترب بشدة من $5$ عندما كلما تزايدت $x$ لقيم كبيرة.
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/mhlwzlktbe?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/hdqqcue52x?embed"></iframe>
 
 ## إيجاد النهايات بشكل جبري
 

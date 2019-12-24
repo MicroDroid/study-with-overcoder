@@ -18,6 +18,7 @@ const requiredURLs = [
 	'markdown/math/calculus/functions.md',
 	'markdown/math/calculus/plots.md',
 	'markdown/math/calculus/limits.md',
+	'markdown/math/calculus/derivatives.md',
 
 	'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css',
 	

@@ -10,7 +10,7 @@
 
 بذلك تكون قد تشكلت مجموعة من الأعداد. بوضعها على خط بياني:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/gacosoxy61?embed" height="180"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/ytad4wl4sj?embed" height="180"></iframe>
 
 لاحظ أن النقاط وضعت على مخطط له محور واحد فقط. ذلك لأن كل قيمة لا ترتبط بأي قيمة أخرى.
 
@@ -32,7 +32,7 @@
 
 ولو تم رسم **الأزواج** العددية على مخطط بياني:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/szkkopjdcx?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/fplcwojfrf?embed"></iframe>
 
 لاحظ تشكل مخطط له محورين بدلاً من محور واحد, وذلك لأن كل نقطة تعبر عن قيمتين بدلا من قيمة واحدة.
 
@@ -62,15 +62,13 @@ $$f(1.00003) = 6.0000600009$$
 
 لتمثيل ذلك على المخطط البياني يُستعمل خط بدلاً من نقاط منفردة على الشكل التالي:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/3aexkwxgcy?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/gxfs1gcus6?embed"></iframe>
 
 بعض التوابع قد تكون منقطعة في بعض الأماكن:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/4wnijvjqia?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/tq2ylo0ijp?embed"></iframe>
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/udzhm4zyoq?embed"></iframe>
-
-> ملاحظة: ناتج هذا التابع في الجزء السالب من المخطط يعتمد على إذا كانت قيمة $x$ فردية أو زوجية, و بما أن $-0.0001$ فردي و $-0.0002$ زوجي نجد ذلك الشكل.
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/ug81kietsy?embed"></iframe>
 
 ### التوابع الخطية
 
@@ -78,7 +76,7 @@ $$f(1.00003) = 6.0000600009$$
 
 $$f(x) = 5x + 18x/{\pi}$$
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/52ot4tutbw?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/pv8d7fhdsq?embed"></iframe>
 
 **المميز الأهم في التابع الخطي أن شكل خطه البياني هو مستقيم.**
 
@@ -88,7 +86,7 @@ $$f(x) = 1/{x+2}$$
 
 هذا التابع **غير** خطي وذلك لأن $x$ من الدرجة  $-1$. ولو تم رسم هذا التابع **لا** يكون مستقيم:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/rewbzjpwee?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/psbuvpmuic?embed"></iframe>
 
 ## تمارين
 
@@ -104,7 +102,7 @@ $$f(x) = 1/{x+2}$$
 ارسم التابع $f(x) = 5x$
 </summary>
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/qbnyu3gm9l?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/vrgfwgxtor?embed"></iframe>
 </details>
 
 <!-- Exercise -->
@@ -115,7 +113,7 @@ $$f(x) = 1/{x+2}$$
 ارسم التابع $f(x) = -x$
 </summary>
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/s40qwpn2kk?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/xqpquhlz5b?embed"></iframe>
 </details>
 
 <!-- Exercise -->
@@ -126,5 +124,5 @@ $$f(x) = 1/{x+2}$$
 ارسم التابع $f(x) = x^3$
 </summary>
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/fxrm9pg6mn?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/wyxbgrmgxk?embed"></iframe>
 </details>

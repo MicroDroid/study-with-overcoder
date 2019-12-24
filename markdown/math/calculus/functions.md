@@ -120,7 +120,7 @@ $$x^2 + y^2 \neq +9$$
 
 ولكن $x^2 + y^2 = 9$ هي معادلة دائرة:
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/ktk0fze5fy?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/ankjmz96is?embed"></iframe>
 
 إذاً يُقال أن التابع معرف على $R^2$ عدا نقاط **محيط** الدائرة التي نصف قطرها $3$.
 
@@ -139,7 +139,7 @@ $$4 > x^2 + y^2$$
 
 أي التابع معرف على كل **ساحة** $R^2$ عدا النقاط الواقعة **داخل** الدائرة التي نصف قطرها $2$.
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/jr8eu63sb3?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/z2p1eqbzc6?embed"></iframe>
 
 ## المجال المقابل لتابع (يسمى أيضا: مجموعة قيم) / Function Co-domains
 
@@ -149,7 +149,7 @@ $$f(x) = \sin(x)$$
 
 هذا تابع مثلثي ناتجه بين $-1$ و $+1$ حصراً ويسمى ذلك بالمجال المقابل للتابع.
 
-<iframe class="desmos-chart" src="https://www.desmos.com/calculator/fbqqozm5c0?embed"></iframe>
+<iframe class="desmos-chart" src="https://www.desmos.com/calculator/xom7yriiv3?embed"></iframe>
 
 ## تمارين
 

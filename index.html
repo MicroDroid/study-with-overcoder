@@ -20,22 +20,22 @@
 	<meta name="theme-color" content="#000000">
 
 	<!-- Search Engine -->
-	<meta name="description" content="Deciphering complex academic knowledge into an easy to understand, discrete set of articles.">
+	<meta name="description" content="تعلم حول العديد من المواضيع العلمية المختلفة مع OverCoder.">
 	<meta name="image" content="/meta/logo.png">
 	<!-- Schema.org for Google -->
 	<meta itemprop="name" content="Study with OverCoder">
-	<meta itemprop="description" content="Deciphering complex academic knowledge into an easy to understand, discrete set of articles.">
+	<meta itemprop="description" content="تعلم حول العديد من المواضيع العلمية المختلفة مع OverCoder.">
 	<meta itemprop="image" content="/meta/logo.png">
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="Study with OverCoder">
-	<meta name="twitter:description" content="Deciphering complex academic knowledge into an easy to understand, discrete set of articles.">
+	<meta name="twitter:description" content="تعلم حول العديد من المواضيع العلمية المختلفة مع OverCoder.">
 	<meta name="twitter:site" content="@overcoder0">
 	<meta name="twitter:creator" content="@overcoder0">
 	<meta name="twitter:image:src" content="/meta/logo.png">
 	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
 	<meta name="og:title" content="Study with OverCoder">
-	<meta name="og:description" content="Deciphering complex academic knowledge into an easy to understand, discrete set of articles.">
+	<meta name="og:description" content="تعلم حول العديد من المواضيع العلمية المختلفة مع OverCoder.">
 	<meta name="og:image" content="/meta/logo.png">
 	<meta name="og:url" content="https://study-with.overcoder.dev/">
 	<meta name="og:site_name" content="Study with OverCoder">
@@ -444,6 +444,7 @@
 								this.scrollToSection(section);
 								this.attachHeadingsAnchors();
 								this.modifyContentLinksBehavior();
+								this.setMeta();
 							});
 						}
 					},
@@ -511,6 +512,24 @@
 									window.history.pushState({}, null, anchor.href);
 									this.onNavigation();
 								});
+					},
+
+					setMeta() {
+						const h1 = document.querySelector('.content > h1:first-child');
+						const p = document.querySelector('.content p');
+
+						const title = h1 ? h1.innerText : 'Study with OverCoder';
+						const description = (p ? p.innerText : 'تعلم حول العديد من المواضيع العلمية المختلفة مع OverCoder.')
+							.replace(/\n/g, ' ') // cleanup
+							.replace(/^(.{160}[^\s]*).*/, '$1'); // truncate
+
+						document.querySelector('title').innerText = title;
+						document.querySelector('meta[name="og:title"]').setAttribute('content', title);
+						document.querySelector('meta[name="twitter:title"]').setAttribute('content', title);
+
+						document.querySelector('meta[name="description"]').setAttribute('content', description);
+						document.querySelector('meta[name="og:description"]').setAttribute('content', description);
+						document.querySelector('meta[name="twitter:description"]').setAttribute('content', description);
 					}
 				},
 			});

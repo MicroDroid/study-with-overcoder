@@ -1,6 +1,6 @@
 ## الرياضيات
 
-- [التوابع](#page=math/calculus/functions)
-- [الرسم البياني](#page=math/calculus/plots)
-- [نهايات التوابع](#page=math/calculus/limits)
-- [المشتقات](#page=math/calculus/derivatives)
+- [التوابع](/math/calculus/functions)
+- [الرسم البياني](/math/calculus/plots)
+- [نهايات التوابع](/math/calculus/limits)
+- [المشتقات](/math/calculus/derivatives)

@@ -1,7 +1,6 @@
 const cacheKey = 'cache-0';
 
 const requiredURLs = [
-	'/',
 	'https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap',
 	'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css',
 	'https://fonts.googleapis.com/icon?family=Material+Icons',
@@ -14,11 +13,18 @@ const requiredURLs = [
 	'fonts/NotoNaskhArabicUI-Regular.ttf',
 	'fonts/NotoNaskhArabicUI-Bold.ttf',
 
-	'markdown/index.md',
-	'markdown/math/calculus/functions.md',
-	'markdown/math/calculus/plots.md',
-	'markdown/math/calculus/limits.md',
-	'markdown/math/calculus/derivatives.md',
+	'/',
+	'/index.html',
+	'/math/calculus/functions',
+	'/math/calculus/plots',
+	'/math/calculus/limits',
+	'/math/calculus/derivatives',
+
+	'/markdown/index.md',
+	'/markdown/math/calculus/functions.md',
+	'/markdown/math/calculus/plots.md',
+	'/markdown/math/calculus/limits.md',
+	'/markdown/math/calculus/derivatives.md',
 
 	'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css',
 	

@@ -398,12 +398,6 @@
 						document.body.classList.add('light');
 
 					this.onNavigation();
-
-					window.addEventListener('popstate', this.onNavigation);
-				},
-
-				destroyed() {
-					window.removeEventListener('popstate', this.onNavigation);
 				},
 
 				methods: {
@@ -436,8 +430,8 @@
 					},
 
 					onNavigation() {
-						const page = getHashParameter('page') || 'index';
-						const section = decodeURIComponent(getHashParameter('section'));
+						const page = window.location.pathname.substr(1);
+						const section = decodeURIComponent(window.location.hash.substr(1));
 
 						if (page === this.loadedPage) {
 							// Probably section hash changed.
@@ -449,8 +443,14 @@
 							this.loadPage(page).then(() => {
 								this.scrollToSection(section);
 								this.attachHeadingsAnchors();
+								this.modifyContentLinksBehavior();
 							});
 						}
+					},
+
+					go(to = '/') {
+						window.history.pushState({}, null, to);
+						this.onNavigation();
 					},
 
 					loadPage(page) {
@@ -458,7 +458,7 @@
 							page_path: window.location.pathname + window.location.hash,
 						});
 
-						return axios.get(`markdown/${page}.md`)
+						return axios.get(!page ? '/markdown/index.md' : `/markdown/${page}.md`)
 							.then(response => {
 								this.content = response.data;
 							}).catch(error => {
@@ -492,18 +492,26 @@
 							heading.addEventListener('click', () => {
 								const section = heading.getAttribute('id');
 
-								const hash = buildParams({
-									...getHashParameter(),
-									section,
-								});
-
-								window.history.pushState({}, null, `#${hash}`);
+								window.history.pushState({}, null, `#${section}`);
 								this.scrollToSection(section);
 
 								if (navigator.clipboard)
 									navigator.clipboard.writeText(window.location.href);
 							});
 					},
+
+					modifyContentLinksBehavior() {
+						const selector = '.content a';
+
+						for (const anchor of document.querySelectorAll(selector))
+							if (anchor.host === window.location.host)
+								anchor.addEventListener('click', event => {
+									event.preventDefault();
+
+									window.history.pushState({}, null, anchor.href);
+									this.onNavigation();
+								});
+					}
 				},
 			});
 		};
@@ -538,7 +546,7 @@
 			<div class="container">
 				<ul class="navbar-nav ml-auto pr-0">
 					<li class="nav-item">
-						<a class="nav-link" href="#page=index">
+						<a class="nav-link" href="javascript:undefined" @click="() => go('/')">
 							<span class="material-icons">home</span>
 						</a>
 					</li>
